@@ -11,6 +11,24 @@
     - average([1, '2']) // Retorno: undefined;
 */
 
-const average = () => {};
+// Aqui foram usadas referencias para o math.round  = https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/round //
+
+// E referencias para a linha valores = Math.round((valores /= array.length)); aqui = https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Division_assignment //
+
+// continuacao das referencias = https://stackoverflow.com/questions/30542515/math-random-in-regards-to-arrays//
+
+const average = (array) => {
+let valores = 0;
+for (let index of array) {
+  if (typeof index !== 'number') {
+    return undefined;
+  }
+  valores += index;
+}
+if (array.length !== 0) {
+  valores = Math.round((valores /= array.length));
+  return valores;
+}
+};
 
 module.exports = average;
